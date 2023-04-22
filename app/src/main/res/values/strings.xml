@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Foodie</string>
+
+    <string name="dont_have_ac_sign_up">Don\'t have an account? <font color="#698E75"><u><b>Sign up</b></u></font> now!</string>
+    <string name="already_have_ac_login">Already have an Account? Login</string>
+
+</resources>
