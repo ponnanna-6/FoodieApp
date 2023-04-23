@@ -20,6 +20,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class LoginMain extends AppCompatActivity {
     EditText EmailAddressEditText;
     EditText PasswordEditText;
@@ -27,6 +29,7 @@ public class LoginMain extends AppCompatActivity {
     TextView ForgotPassword;
     Button LoginWithGoogle;
     TextView DontHaveAcSignUp;
+    FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,7 @@ public class LoginMain extends AppCompatActivity {
         ForgotPassword=findViewById(R.id.forgotPasswordTextView);
         LoginWithGoogle=findViewById(R.id.loginWithGoogle);
         DontHaveAcSignUp=findViewById(R.id.dontHaveAcSignUp);
+
 
         //change color of sign up in don't have an account sign up
         String dontHaveAcString=getString(R.string.dont_have_ac_sign_up);

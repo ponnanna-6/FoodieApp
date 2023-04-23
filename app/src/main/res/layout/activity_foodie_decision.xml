@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".FoodieDecision">
+
+    <TextView
+        android:id="@+id/foodieDecisionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="61dp"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/roboto_mono_bold"
+        android:text="Foodie Decision"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/foodieDecisionImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/foodieDecisionImageView"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="67dp"
+        app:layout_constraintBottom_toTopOf="@+id/foodieDecisionNonVeg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foodieDecisionTextView"
+        app:srcCompat="@drawable/foodie_pacman_symbol" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/foodieDecisionVeg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="29dp"
+        android:background="@drawable/button_selector"
+        android:text="Veg"
+        app:layout_constraintBaseline_toBaselineOf="@+id/foodieDecisionNonVeg"
+        app:layout_constraintEnd_toStartOf="@+id/foodieDecisionNonVeg"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/foodieDecisionNonVeg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="467dp"
+        android:background="@drawable/button_selector"
+        android:text="Non-Veg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/foodieDecisionVeg"
+        app:layout_constraintTop_toBottomOf="@+id/foodieDecisionImageView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/breakfastButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginEnd="14dp"
+        android:background="@drawable/button_light_80_30"
+        android:text="Breakfast"
+        app:layout_constraintBaseline_toBaselineOf="@+id/lunchButton"
+        app:layout_constraintEnd_toStartOf="@+id/lunchButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/lunchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/button_light_80_30"
+        android:text="Lunch"
+        app:layout_constraintBottom_toTopOf="@+id/brunchButton"
+        app:layout_constraintEnd_toStartOf="@+id/dinnerButton"
+        app:layout_constraintStart_toEndOf="@+id/breakfastButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/dinnerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:background="@drawable/button_light_80_30"
+        android:text="Dinner"
+        app:layout_constraintBaseline_toBaselineOf="@+id/lunchButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lunchButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/snacksButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="51dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="117dp"
+        android:background="@drawable/button_light_80_30"
+        android:text="Snacks"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/brunchButton"
+        app:layout_constraintStart_toStartOf="@+id/breakfastButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/brunchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_light_80_30"
+        android:text="Brunch"
+        app:layout_constraintBaseline_toBaselineOf="@+id/snacksButton"
+        app:layout_constraintEnd_toStartOf="@+id/dinnerButton"
+        app:layout_constraintStart_toStartOf="@+id/dinnerButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/applyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/text_field_light"
+        android:clickable="true"
+        android:text="Apply"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    <com.google.android.material.slider.RangeSlider
+        android:id="@+id/rangeSlider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:stepSize="50"
+        android:valueFrom="0"
+        android:valueTo="2000"
+        app:labelBehavior="withinBounds"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foodieDecisionVeg" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/priceSelectedTextView"
+        android:background="@drawable/rectangle_80_30"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rangeSlider"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
