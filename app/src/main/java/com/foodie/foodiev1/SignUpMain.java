@@ -1,5 +1,6 @@
 package com.foodie.foodiev1;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
@@ -17,6 +18,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class SignUpMain extends AppCompatActivity {
 
     EditText signUpName;
@@ -26,6 +32,8 @@ public class SignUpMain extends AppCompatActivity {
     AppCompatButton signUpButton;
     TextView alreadyHaveAcLogin;
     AppCompatButton signUpWithGoogleButton;
+
+    FirebaseAuth firebaseAuth= FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +70,17 @@ public class SignUpMain extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 hideKeyboard(view);
-                final String result = signUpName.getText().toString();
-                Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
+                String userName = signUpName.getText().toString();
+                String userEmail = signUpEmail.getText().toString();
+                String userPassword = signUpPassword.getText().toString();
+                String userConfirmPassword = signUpConfirmPassword.getText().toString();
+                if(!userPassword.equals(userConfirmPassword)){
+                    Toast.makeText(getApplicationContext(),
+                            "The passwords you entered don't match. Please try again.", Toast.LENGTH_LONG).show();
+                }else{
+                    signUpFirebase(userEmail, userPassword);
+                }
+
 
             }
         });
@@ -73,5 +90,29 @@ public class SignUpMain extends AppCompatActivity {
     private void hideKeyboard (View v) {
         InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(v.getApplicationWindowToken(),0);
+    }
+
+    public void signUpFirebase(String userEmail, String userPassword){
+        firebaseAuth.createUserWithEmailAndPassword(userEmail, userPassword)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Toast.makeText(SignUpMain.this,
+                                    "User created successfully", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(SignUpMain.this, LoginMain.class);
+                            startActivity(intent);
+                            finish();
+
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Toast.makeText(SignUpMain.this,
+                                    "ERROR: User could not be created", Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+                });
+
     }
 }

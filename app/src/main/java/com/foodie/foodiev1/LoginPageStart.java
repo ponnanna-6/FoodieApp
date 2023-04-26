@@ -8,9 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class LoginPageStart extends AppCompatActivity {
 
     Button loginButton, createAccountButton;
+    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -38,5 +42,17 @@ public class LoginPageStart extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        if(user != null){
+            Intent intent = new Intent(LoginPageStart.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 }

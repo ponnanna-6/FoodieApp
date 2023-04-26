@@ -3,5 +3,6 @@
 
     <string name="dont_have_ac_sign_up">Don\'t have an account? <font color="#698E75"><u><b>Sign up</b></u></font> now!</string>
     <string name="already_have_ac_login">Already have an Account? Login</string>
+    <string name="reset_password_text">Please enter your email to receive a link to create a new password.</string>
 
 </resources>

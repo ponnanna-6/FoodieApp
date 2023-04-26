@@ -8,7 +8,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:31417614006:android:8b8cb5cf88ba1c501e3017",
+        "mobilesdk_app_id": "1:31417614006:android:02fd7f4662a3176e1e3017",
         "android_client_info": {
           "package_name": "com.foodie.foodiev1"
         }
@@ -23,7 +23,7 @@
           }
         },
         {
-          "client_id": "31417614006-q9nvhpl30ttanqah4mlmmn5q26cgf0qq.apps.googleusercontent.com",
+          "client_id": "31417614006-05rt5v7vqf8bp237jh2m5bv0nnqs21oc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -36,7 +36,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "31417614006-q9nvhpl30ttanqah4mlmmn5q26cgf0qq.apps.googleusercontent.com",
+              "client_id": "31417614006-05rt5v7vqf8bp237jh2m5bv0nnqs21oc.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

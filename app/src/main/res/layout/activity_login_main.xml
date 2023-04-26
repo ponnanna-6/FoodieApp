@@ -66,13 +66,15 @@
         android:id="@+id/forgotPasswordTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="40dp"
         android:text="forgot password?"
+        android:clickable="true"
         android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LoginButtonMain" />
+        app:layout_constraintTop_toBottomOf="@+id/LoginButtonMain"
+        android:focusable="true" />
 
     <TextView
         android:id="@+id/textView3"
