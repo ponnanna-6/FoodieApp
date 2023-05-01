@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
 
+import com.foodie.foodiev1.authentication.LoginPageStart;
+
 public class SplashScreenActivity extends AppCompatActivity {
 
     @Override

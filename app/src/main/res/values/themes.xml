@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.FoodieV1" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Primary brand color. -->
@@ -24,5 +24,10 @@
 
     <style name="Button.Color" parent="ThemeOverlay.Material3.Button">
         <item name="colorAccent">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlActivated">@color/duskYellow</item>
     </style>
 </resources>

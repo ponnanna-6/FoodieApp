@@ -27,93 +27,95 @@
         android:id="@+id/foodieDecisionImageView"
         android:layout_width="150dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="67dp"
-        app:layout_constraintBottom_toTopOf="@+id/foodieDecisionNonVeg"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/foodieDecisionTextView"
         app:srcCompat="@drawable/foodie_pacman_symbol" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/foodieDecisionVeg"
+    <RadioGroup
+        android:id="@+id/radioGroupCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="29dp"
-        android:background="@drawable/button_selector"
-        android:text="Veg"
-        app:layout_constraintBaseline_toBaselineOf="@+id/foodieDecisionNonVeg"
-        app:layout_constraintEnd_toStartOf="@+id/foodieDecisionNonVeg"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginStart="11dp"
+        android:layout_marginBottom="51dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/foodieDecisionNonVeg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="467dp"
-        android:background="@drawable/button_selector"
-        android:text="Non-Veg"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/foodieDecisionVeg"
-        app:layout_constraintTop_toBottomOf="@+id/foodieDecisionImageView" />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/foodieDecisionVeg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/button_selector"
+            android:text="Veg"
+            tools:layout_editor_absoluteX="11dp"
+            tools:layout_editor_absoluteY="349dp" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/breakfastButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="19dp"
-        android:layout_marginEnd="14dp"
-        android:background="@drawable/button_light_80_30"
-        android:text="Breakfast"
-        app:layout_constraintBaseline_toBaselineOf="@+id/lunchButton"
-        app:layout_constraintEnd_toStartOf="@+id/lunchButton"
-        app:layout_constraintStart_toStartOf="parent" />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/foodieDecisionNonVeg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/button_selector"
+            android:text="Non-Veg"
+            tools:layout_editor_absoluteX="145dp"
+            tools:layout_editor_absoluteY="349dp" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/lunchButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="35dp"
-        android:background="@drawable/button_light_80_30"
-        android:text="Lunch"
-        app:layout_constraintBottom_toTopOf="@+id/brunchButton"
-        app:layout_constraintEnd_toStartOf="@+id/dinnerButton"
-        app:layout_constraintStart_toEndOf="@+id/breakfastButton" />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/foodieDecisionLocal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_selector"
+            android:text="Local"
+            tools:layout_editor_absoluteX="281dp"
+            tools:layout_editor_absoluteY="349dp" />
+    </RadioGroup>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/dinnerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="18dp"
-        android:background="@drawable/button_light_80_30"
-        android:text="Dinner"
-        app:layout_constraintBaseline_toBaselineOf="@+id/lunchButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/lunchButton" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/snacksButton"
+    <RadioGroup
+        android:id="@+id/radioGroupPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="51dp"
-        android:layout_marginEnd="54dp"
-        android:layout_marginBottom="117dp"
-        android:background="@drawable/button_light_80_30"
-        android:text="Snacks"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/brunchButton"
-        app:layout_constraintStart_toStartOf="@+id/breakfastButton" />
+        android:layout_marginStart="26dp"
+        android:layout_marginBottom="112dp"
+        app:layout_constraintBottom_toTopOf="@+id/applyButton"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/brunchButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_light_80_30"
-        android:text="Brunch"
-        app:layout_constraintBaseline_toBaselineOf="@+id/snacksButton"
-        app:layout_constraintEnd_toStartOf="@+id/dinnerButton"
-        app:layout_constraintStart_toStartOf="@+id/dinnerButton" />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/priceEconomyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_selector"
+            android:text="Economy"
+            tools:layout_editor_absoluteX="145dp"
+            tools:layout_editor_absoluteY="498dp" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/priceMidRangeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_selector"
+            android:text="Mid-Range"
+            tools:layout_editor_absoluteX="145dp"
+            tools:layout_editor_absoluteY="569dp" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/priceExpensiveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_selector"
+            android:text="Expensive"
+            tools:layout_editor_absoluteX="145dp"
+            tools:layout_editor_absoluteY="637dp" />
+    </RadioGroup>
+
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/applyButton"
@@ -126,39 +128,38 @@
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-
-    <com.google.android.material.slider.RangeSlider
-        android:id="@+id/rangeSlider"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:stepSize="50"
-        android:valueFrom="0"
-        android:valueTo="2000"
-        app:labelBehavior="withinBounds"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foodieDecisionVeg" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupPrice" />
+
 
     <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/priceSelectedTextView"
-        android:background="@drawable/rectangle_80_30"
-        android:text="0"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:layout_marginStart="27dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/roboto_mono_bold"
+        android:text="Category"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroupCategory"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rangeSlider"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/foodieDecisionImageView" />
 
-
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginBottom="29dp"
+        android:fontFamily="@font/roboto_mono_bold"
+        android:text="Price Range"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroupPrice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupCategory" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,9 +16,7 @@ import java.util.List;
 public class FoodieDecision extends AppCompatActivity {
 
     Button vegSelectorButton, nonVegSelectorButton;
-    RangeSlider priceRangeSlider;
-    TextView priceSelectedTextView;
-    Button breakfastButton, lunchButton, dinnerButton, snacksButton, brunchButton;
+    Button priceEconomyButton, priceMidrangeButton, priceExpensiveButton;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -32,30 +30,9 @@ public class FoodieDecision extends AppCompatActivity {
         vegSelectorButton=findViewById(R.id.foodieDecisionVeg);
         nonVegSelectorButton=findViewById(R.id.foodieDecisionNonVeg);
 
-        //range slider to set price
-        priceRangeSlider=findViewById(R.id.rangeSlider);
-        priceSelectedTextView=findViewById(R.id.priceSelectedTextView);
-
-        //5 meals view id
-        breakfastButton=findViewById(R.id.breakfastButton);
-        lunchButton=findViewById(R.id.lunchButton);
-        dinnerButton=findViewById(R.id.dinnerButton);
-        brunchButton=findViewById(R.id.brunchButton);
-        snacksButton=findViewById(R.id.snacksButton);
-
-
-        List<Float> selectedValues = priceRangeSlider.getValues();
-        float minValue = selectedValues.get(0);
-
-        priceRangeSlider.addOnChangeListener(new RangeSlider.OnChangeListener() {
-            @Override
-            public void onValueChange(@NonNull RangeSlider slider, float value, boolean fromUser) {
-                priceSelectedTextView.setText(String.valueOf((int) value));
-                //Toast.makeText(getApplicationContext(), String.valueOf(value), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-
+    }
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }
